@@ -1,0 +1,97 @@
+
+
+<div *ngIf="!notification">
+    <div class="loader-container">
+        <div class="loader-positioner">
+            <div class="loader loader-sm loader-inline">Loading ...</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-12 my-2">
+    <div class="row">
+        <button class="btn btn-success" [routerLink]="['/notifications/create']">New notification</button>
+    </div>
+</div>
+
+
+<div class="card">
+<div class="card-header card-header-default">
+<i class="fa fa-bell-o mr-1" aria-hidden="true"></i>Notifications
+</div>
+<div class="card-block no-gutters">
+    <table id="notificationsTable" class="table responsive table-striped table-bordered mb-0">
+        <thead id="notificationsHead">
+            <tr>
+                <th class="text-xl-center width-sm">
+                    <input type="checkbox" class="checkAll">
+                </th>
+
+                <th class="text-xl-center width-sm">
+                    <a href="#" data-order="unread" class="icon-before-sort">
+                        <i class="fa fa-sort-amount-" aria-hidden="true"></i>
+                        Read
+                    </a>
+                </th>
+
+                <th class="width-5">
+                    <a href="#" data-order="subject" class="icon-before-sort">
+                        <i class="fa fa-sort-amount-" aria-hidden="true"></i>
+                        Subject
+                    </a>
+                </th>
+
+                <th class="text-xl-center width-1">
+                    <a href="#" data-order="level" class="icon-before-sort">
+                        <i class="fa fa-sort-amount-" aria-hidden="true"></i>
+                        Level
+                    </a>
+                </th>
+
+                <th class="width-1">
+                    <a href="#" data-order="createdAt" class="sort-desc">
+                        <i class="fa fa-sort-amount-" aria-hidden="true"></i>
+                        Created
+                    </a>
+                </th>
+
+                <th class="text-xl-center width-sm">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody id="notificationsList">
+            <tr *ngFor="let notification of notification">
+                <td class="text-sm-center">
+                    <input type="checkbox" />
+                </td>
+
+                <td class="text-sm-center">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </td>
+
+                <td data-heading="Subject" class="text-xl-left">
+                    <a [routerLink]="['/notifications', notification.id]">
+                        {{notification.subject}}
+                    </a>
+                </td>
+
+                <td class="text-xl-center" data-heading="Level">
+                    <div class="badge badge-{{notification.level}}">
+                        {{notification.level}}
+                    </div>
+                </td>
+
+                <td>
+                    {{notification.createdAt * 1000 | date:'shortDate'}}
+                </td>
+
+                <td class="text-center table-actions-icons">
+                    <i class="fa fa-trash deleteRow fa-1x" aria-hidden="true" tabindex="0"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

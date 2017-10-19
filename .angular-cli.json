@@ -19,6 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "thirdparty/freedom/dist/css/3rd.css",
+        "thirdparty/freedom/dist/css/freedom-ui.min.css",
         "styles.css"
       ],
       "scripts": [],

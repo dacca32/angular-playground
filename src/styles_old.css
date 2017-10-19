@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+
+.navbar-ncc {
+    background: #414042
+}
+
+.brand-bar {
+    width: Auto;
+}
+
+footer {
+    left: 0;
+}
+
+.bootstrap-vertical-nav, .bootstrap-vertical-nav nav.navbar {
+    padding: 0;
+}
+
+#mainNav.list-group > .list-group-item {
+    position: relative;
+      font-weight: 700;
+      color: #6d7880;
+      background: none;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      -moz-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      border-top: 1px solid #ccc;
+      white-space: nowrap;
+      border-left: none;
+      border-right: none;
+      padding: .75rem 1.75rem;
+}
+#mainNav.list-group > .list-group-item span {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  width: 70%;
+}
+@media screen and (max-width: 992px) {
+  #mainNav.list-group > .list-group-item span {
+    width: auto;
+  }
+}
+
+#mainNav.list-group>.list-group-item.active:first-child {
+    border-top: none;
+}
+
+#mainNav.list-group > .list-group-item.active {
+  color: #C41230;
+  background: #f6f6f6;
+  border-top: 1px solid #bebebe;
+  border-bottom: none;
+  border-right: #f6f6f6;
+  border-left: none;
+}
+#mainNav.list-group > .list-group-item.active .fa {
+  color: #C41230;
+}
+#mainNav.list-group > .list-group-item.active:first-child {
+  border-top: none;
+}
+#mainNav.list-group > .list-group-item.active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #C41230;
+  top: 0;
+  left: 0;
+}
+#mainNav.list-group > .list-group-item.active:after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6f6f6;
+  display: block;
+  position: absolute;
+  right: -2px;
+  top: 0;
+}
+#mainNav.list-group > .list-group-item.child-menu-active {
+  background: #f6f6f6;
+}
+#mainNav.list-group > .list-group-item:hover {
+  background: #f6f6f6;
+}
+
+.badge-info {
+    background: #5bc0de;
+    color: white;
+}
+
+.badge-warning {
+    background: #f0ad4e;
+    color: white;
+}
+
+.badge-critical {
+    background: #9d23ca;
+    color: white;
+}
+
+.badge-error {
+    background: #C41230;
+    color: white;
+}

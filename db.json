@@ -1,0 +1,76 @@
+{
+  "scans": [
+    {
+      "id": "e07f54eb-623c-5102-8324-89caaec1e493",
+      "name": "Filip Network Scan - ReRun",
+      "status": "cancelled"
+    },
+    {
+      "id": "4047d205-abb3-5068-8cdb-dbfcbd406c59",
+      "name": "Scan-2017-10-04-16-10",
+      "status": "cancelled"
+    },
+    {
+      "id": "0bf6f4fa-9eb7-5ba8-a971-2e94e47e1770",
+      "name": "Scot test scan 2 - ReRun",
+      "status": "cancelled"
+    },
+    {
+      "id": "db33c4ed-9eba-509a-8249-73c745b22c9d",
+      "name": "Scot Test Scan 2 - ReRun",
+      "status": "cancelled"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "0136466c-8ae4-11e6-ae22-56b6b6499611",
+      "subject": "Scan Completed",
+      "content": "Your Nessus scan has completed.",
+      "level": "info",
+      "data": {
+        "scanid": "2d27665c-8ae9-11e6-ae22-56b6b6499611"
+      },
+      "unread": true,
+      "createdAt": 1467364243,
+      "updatedAt": 1467364243
+    },
+    {
+      "id": "01364c98-8ae4-11e6-ae22-56b6b6499611",
+      "subject": "Authorization Error",
+      "content": "You do not have permission to perform the requested action.",
+      "level": "error",
+      "data": null,
+      "unread": false,
+      "createdAt": 1467364243,
+      "updatedAt": 1467364243
+    },
+    {
+      "id": "01364dd8-8ae4-11e6-ae22-56b6b6499611",
+      "subject": "Report Download Ready",
+      "content": "Your report is now ready to be downloaded.",
+      "level": "info",
+      "data": null,
+      "unread": false,
+      "createdAt": 1467364243,
+      "updatedAt": 1467364243
+    },
+    {
+      "subject": "Check out my notification",
+      "content": "this is my awesome notification",
+      "level": "critical",
+      "id": "BJ6CMkSaW"
+    }
+  ],
+  "statistics": [
+    {
+      "date": {},
+      "uniqueVulnerabilities": {
+        "0": 6,
+        "1": 8,
+        "2": 6,
+        "3": 9,
+        "4": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-bell-o mr-1"></i>Create new notification
+    </div>
+
+    <div class="card-block py-4">
+        <div class="col-sm-12">
+            <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+                <fieldset>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input ngModel name="subject" id="subject" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea ngModel name="content" id="content" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Level</label>
+                        <input ngModel name="level" id="level" type="text" class="form-control">
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
