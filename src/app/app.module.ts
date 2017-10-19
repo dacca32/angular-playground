@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+import { NgbdModalBasic } from './shared/modal/modal.component';
 
 import { NotificationService } from './notifications/service/notifications-service';
 
@@ -42,7 +45,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     NotificationDetailComponent,
     AssetManagementComponent,
     AdminComponent,
-    NotificationCreateComponent
+    NotificationCreateComponent,
+    NgbdModalBasic
   ],
   imports: [
     AppRoutingModule,
@@ -50,7 +54,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     HttpModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [
       NotificationService

@@ -1,5 +1,6 @@
-import {  Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
@@ -8,48 +9,60 @@ import { Notification } from '../model/notification.model';
 @Injectable()
 export class NotificationService {
 
+    private url = 'http://localhost:3000';
+
+    notificationAction = new EventEmitter<any>();
+
     constructor (
         private http: Http
     ) {}
 
     // Methods
 
-    list() {
+    getNotifications() {
 
         let headers = new Headers();
 
         headers.append("Content-Type" , "application/json");
 
-        return this.http.get('http://localhost:3000/notifications', {
+        return this.http.get(this.url + '/notifications', {
             headers: headers
         })
-        .toPromise()
-        .then( (res: Response ) => {
+        .map(res => res.json());
+    }
 
-            let data = res.json();
-            let allNotifications = [];
+    createNewNotification(notification){
 
-            data.forEach((entry) => {
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
 
-                // console.log(data);
-
-                let notification = new Notification();
-
-                notification.id = entry.id;
-                notification.content = entry.content;
-                notification.data = entry.data;
-                notification.level = entry.level;
-                notification.subject = entry.subject;
-                notification.unread = entry.unread;
-                notification.createdAt = entry.createdAt;
-                notification.updatedAt = entry.updatedAt;
-
-                allNotifications.push(notification);
-            })
-
-            return allNotifications;
+		return this.http.post(this.url + '/notifications', JSON.stringify(notification), {
+            headers: headers
         })
-        .catch(this.handleError);
+		.map(res => res.json());
+
+    }
+
+    updateNotification(notification){
+
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+		return this.http.patch(this.url + '/notifications' + '/' + notification.id, JSON.stringify(notification), {
+            headers: headers
+        })
+		.map(res => res.json());
+
+    }
+
+    deleteNotification(id){
+
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        return this.http.delete(this.url + '/notifications/' + id, {
+            headers: headers
+        })
     }
 
     get(id: number) {
@@ -78,16 +91,6 @@ export class NotificationService {
             return notification;
         })
         .catch(this.handleError);
-    }
-
-    add(notification){
-
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-		return this.http.post("http://localhost:3000/notifications/", JSON.stringify(notification), {headers: headers})
-			.map(res => res.json());
-
     }
 
     private handleError (error: Response | any ){

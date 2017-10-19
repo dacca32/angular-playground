@@ -63,7 +63,7 @@
         </thead>
 
         <tbody id="notificationsList">
-            <tr *ngFor="let notification of notification">
+            <tr *ngFor="let notification of notifications">
                 <td class="text-sm-center">
                     <input type="checkbox" />
                 </td>
@@ -89,7 +89,8 @@
                 </td>
 
                 <td class="text-center table-actions-icons">
-                    <i class="fa fa-trash deleteRow fa-1x" aria-hidden="true" tabindex="0"></i>
+                    <!-- <i class="fa fa-trash deleteRow fa-1x" aria-hidden="true" tabindex="0" (click)="deleteNotification(notification)"></i> -->
+                    <ngbd-modal-basic notificationId="{{notification.id}}"></ngbd-modal-basic>
                 </td>
             </tr>
         </tbody>

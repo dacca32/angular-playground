@@ -31,8 +31,8 @@ export class NotificationCreateComponent implements OnInit {
 
         const notification = new Notification();
 
-        this._notificationService.add(form)
-            .subscribe( x => {
+        this._notificationService.createNewNotification(form)
+            .subscribe(notification => {
                 this._router.navigate(['notifications'])
             })
     }
