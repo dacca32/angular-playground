@@ -3,7 +3,6 @@ import { Component, OnInit} from '@angular/core';
 import { environment } from 'environments/environment';
 import { Notification } from '../model/notification.model';
 import { NotificationService } from '../service/notifications-service';
-
 import { NgbdModalBasic } from '../../shared/modal/modal.component';
 
 @Component({
@@ -15,6 +14,7 @@ import { NgbdModalBasic } from '../../shared/modal/modal.component';
 export class NotificationsListComponent implements OnInit {
 
     notifications: any[];
+    p: number = 1;
 
     constructor(
         private _notificationService: NotificationService

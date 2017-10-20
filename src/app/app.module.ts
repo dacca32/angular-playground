@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { NgbdModalBasic } from './shared/modal/modal.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { NotificationService } from './notifications/service/notifications-service';
 
@@ -55,7 +56,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [
       NotificationService

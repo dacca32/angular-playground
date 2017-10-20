@@ -81,6 +81,12 @@
       "data": null,
       "createdAt": 1508415692,
       "updatedAt": 1508415692
+    },
+    {
+      "subject": "My new note",
+      "content": "shizzle",
+      "level": "low",
+      "id": "SyCutrL6W"
     }
   ],
   "statistics": [

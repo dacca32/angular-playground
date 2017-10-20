@@ -1,3 +1,64 @@
 @import "compass/css3"; // variables
 
+$padding: .5rem .5rem;
+$border-radius-left: .25rem 0 0 .25rem;
+$border-radius-right: 0 .25rem .25rem 0;
+
 // sass styles here....
+ .badge-critical{
+     color: #ffffff;
+     background-color: #9d23ca;
+ }
+
+ .badge-error{
+     color: #ffffff;
+     background-color: #C41230;
+ }
+
+  .badge-low{
+      color: #ffffff;
+      background-color: #558300;
+  }
+
+  .ncc-pagination {
+      ul.ngx-pagination {
+
+        font-size: 0;
+        color: #333;
+
+        .disabled {
+            padding: $padding;
+        }
+
+        .current {
+            padding: $padding;
+            background-color: #bebebe;
+            border: none;
+        }
+
+        li {
+            font-size: 14px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+
+        span {
+            padding: $padding;
+            border: none;
+        }
+
+        a {
+            padding: $padding;
+            border: none;
+        }
+
+        &.pagination-previous{
+            @include border-radius($border-radius-left);
+        }
+
+        &.pagination-next {
+            @include border-radius($border-radius-right);
+        }
+        }
+
+      }
+  }
