@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ChartComponent } from './charts/chart.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,5 +18,6 @@ export class DashboardComponent implements OnInit {
   goToScans(event) {
       this.router.navigate(['/scans']);
   }
+
 
 }

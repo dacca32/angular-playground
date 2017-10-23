@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ChartModule } from 'angular2-chartjs';
 
 import { NgbdModalBasic } from './shared/modal/modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -26,6 +27,7 @@ import { AssetManagementComponent } from './asset-management/asset-management.co
 import { ScansComponent } from './scans/scans.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotificationDetailComponent } from './notifications/view/notification-detail.component';
+import { ChartComponent } from './dashboard/charts/chart.component';
 
 import { HelpComponent } from './help/help.component';
 
@@ -47,7 +49,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     AssetManagementComponent,
     AdminComponent,
     NotificationCreateComponent,
-    NgbdModalBasic
+    NgbdModalBasic,
+    ChartComponent
   ],
   imports: [
     AppRoutingModule,
@@ -57,7 +60,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     FormsModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChartModule
   ],
   providers: [
       NotificationService
