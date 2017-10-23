@@ -7,19 +7,22 @@ import { ChartModule } from 'angular2-chartjs';
 })
 export class ChartComponent {
 
-    type = 'line';
-      data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-          {
-            label: "My dataset",
-            data: [65, 59, 80, 81, 56, 55, 40]
-          }
-        ]
-      };
-      options = {
-        responsive: true,
-        maintainAspectRatio: false
-      };
+chartOptions = {
+    responsive: true
+  };
+
+  chartData = [
+    { data: [330, 600, 260, 700], label: 'Information' },
+    { data: [120, 455, 100, 340], label: 'Low'},
+    { data: [45, 67, 800, 500], label: 'Medium' },
+    { data: [20, 255, 140, 640], label: 'High'},
+    { data: [4, 167, 345, 720], label: 'Critical' }
+  ];
+
+  chartLabels = ['January', 'February', 'Mars', 'April'];
+
+  onChartClick(event) {
+    console.log(event);
+  }
 
 }

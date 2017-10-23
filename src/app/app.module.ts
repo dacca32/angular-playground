@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ChartModule } from 'angular2-chartjs';
+import { ChartsModule } from 'ng2-charts';
 
 import { NgbdModalBasic } from './shared/modal/modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -61,7 +61,7 @@ import { NotificationCreateComponent } from './notifications/create/notification
     ReactiveFormsModule,
     NgbModule.forRoot(),
     NgxPaginationModule,
-    ChartModule
+    ChartsModule
   ],
   providers: [
       NotificationService

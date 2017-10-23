@@ -10,7 +10,9 @@ import { ChartComponent } from './charts/chart.component';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+      private router: Router
+  ) { }
 
   ngOnInit() {
   }
