@@ -1,10 +1,10 @@
 <div class="col-sm-6">
     <div class="card">
         <div class="card-header">
-            <i class="fa fa-chart mr-1"></i>Charts
+            <i class="fa fa-area-chart mr-1"></i>Charts
         </div>
         <div class="card-block px-4 py-4">
-            <chart-component></chart-component>
+            <chart-component [chartLabels]="labels" [chartData]="data" [chartOptions]="options"></chart-component>
         </div>
     </div>
 </div>
