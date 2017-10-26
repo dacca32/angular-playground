@@ -27,13 +27,16 @@ import { AssetManagementComponent } from './asset-management/asset-management.co
 import { ScansComponent } from './scans/scans.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotificationDetailComponent } from './notifications/view/notification-detail.component';
-import { ChartComponent } from './dashboard/charts/chart.component';
+import { ChartComponent } from './shared/charts/chart.component';
 
+import { StatisticsComponent } from './statistics/view/statistics.component';
+import { StatisticsService } from './statistics/service/statistics-service';
 import { HelpComponent } from './help/help.component';
 
 // pipes
 import { DatePipe } from '@angular/common';
 import { NotificationCreateComponent } from './notifications/create/notification-create.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     AdminComponent,
     NotificationCreateComponent,
     NgbdModalBasic,
-    ChartComponent
+    ChartComponent,
+    StatisticsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -64,7 +68,8 @@ import { NotificationCreateComponent } from './notifications/create/notification
     ChartsModule
   ],
   providers: [
-      NotificationService
+      NotificationService,
+      StatisticsService
   ],
   bootstrap: [AppComponent]
 })
