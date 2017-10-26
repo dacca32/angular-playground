@@ -8,34 +8,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 
-import { NgbdModalBasic } from './shared/modal/modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
-import { NotificationService } from './notifications/service/notifications-service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
+// Modules
+
+import { DashboardModule } from './dashboard/dashboard.module';
+import { NotificationsModule} from './notifications/notifications.module';
+
+// Core layout components
+
 import { HeaderComponent } from './layout/header/header.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
-import { NotificationsListComponent } from './notifications/list/notifications-list.component';
-
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AssetManagementComponent } from './asset-management/asset-management.component';
-import { ScansComponent } from './scans/scans.component';
-import { AdminComponent } from './admin/admin.component';
-import { NotificationDetailComponent } from './notifications/view/notification-detail.component';
-import { ChartComponent } from './shared/charts/chart.component';
-
-import { StatisticsComponent } from './statistics/view/statistics.component';
-import { StatisticsService } from './statistics/service/statistics-service';
-import { HelpComponent } from './help/help.component';
-
-// pipes
-import { DatePipe } from '@angular/common';
-import { NotificationCreateComponent } from './notifications/create/notification-create.component';
 
 
 @NgModule({
@@ -43,34 +30,16 @@ import { NotificationCreateComponent } from './notifications/create/notification
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    FooterComponent,
-    DashboardComponent,
-    NotificationsListComponent,
-    ScansComponent,
-    HelpComponent,
-    NotificationDetailComponent,
-    AssetManagementComponent,
-    AdminComponent,
-    NotificationCreateComponent,
-    NgbdModalBasic,
-    ChartComponent,
-    StatisticsComponent
+    FooterComponent
   ],
   imports: [
     AppRoutingModule,
+    DashboardModule,
+    NotificationsModule,
     BrowserModule,
-    HttpModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule.forRoot(),
-    NgxPaginationModule,
-    ChartsModule
+    NgbModule.forRoot()
   ],
-  providers: [
-      NotificationService,
-      StatisticsService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
